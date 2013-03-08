@@ -10,6 +10,7 @@ events {
 }
 
 http {
+  <% if scope.lookupvar('nginx::params::nx_types_hash_max_size') %>types_hash_max_size <%= scope.lookupvar('nginx::params::nx_types_hash_max_size')%>;<% end %>
   include       /etc/nginx/mime.types;
   default_type  application/octet-stream;
 
